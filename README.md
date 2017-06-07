@@ -11,14 +11,13 @@ node 6.3.x or later and mongodb
 
 ## getting started
 
-install mongodb
+install homebrew if on mac (why don't you have homebrew yet?)
 
-run mongodb
+install mongodb
 
 install nvm
 
 install npm
-
 
 
 ## developing
