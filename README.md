@@ -9,13 +9,32 @@
 
 node 6.3.x or later and mongodb
 
+## getting started
+
+install mongodb
+
+run mongodb
+
+install nvm
+
+install npm
+
+
+
 ## developing
 
-run mongodd on a separated terminal instance:
+run mongod on a separated terminal instance:
 
 ```
 mongod
 ```
+
+first time, install npm:
+
+```
+npm install
+```
+
 
 run the app:
 
