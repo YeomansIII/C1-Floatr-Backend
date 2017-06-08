@@ -1,9 +1,4 @@
-# nc-loan
-
-[![generator-api](https://img.shields.io/badge/built%20with-generator--api-green.svg)](https://github.com/ndelvalle/generator-api)
-
-[![Build Status](https://travis-ci.com/YeomansIII/NC-Loan-Backend.svg?token=zqF52HiepGXEgVDa3pRv&branch=master)](https://travis-ci.com/YeomansIII/NC-Loan-Backend)
-
+# Floatr Backend
 
 ## dependencies
 
@@ -11,35 +6,28 @@ node 6.3.x or later and mongodb
 
 ## getting started
 
-install homebrew if on mac (why don't you have homebrew yet?)
+install [brew](http://brew.sh) if on mac (why don't you have brew yet?)
 
-install mongodb
+`brew install mongodb`
 
-install nvm
+[install nvm](https://github.com/creationix/nvm#install-script)
 
-install npm
-
+`nvm install 6`
+`nvm alias default 6`
 
 ## developing
 
 run mongod on a separated terminal instance:
 
-```
-mongod
-```
+`mongod`
 
 first time, install npm:
 
-```
-npm install
-```
-
+`npm install`
 
 run the app:
 
-```bash
-npm run dev
-```
+`npm run dev`
 
 the app runs on `localhost:8080`
 
@@ -47,9 +35,7 @@ the app runs on `localhost:8080`
 
 _you'll likely be consuming mongodb as a service, so make sure you set the env var to connect to it._
 
-```bash
-npm start
-```
+`npm start`
 
 
 
