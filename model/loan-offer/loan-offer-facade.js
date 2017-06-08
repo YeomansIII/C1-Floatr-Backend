@@ -18,14 +18,14 @@ class LoanOfferModel extends Model {
     } );
   }
   findById(id) {
-    return this.Schema
+    return loanOfferSchema
       .findById(id)
       .populate('loaner')
       .populate('loanee')
       .exec();
   }
   find(query) {
-    return this.Schema
+    return loanOfferSchema
       .find(query)
       .populate('loaner')
       .populate('loanee')

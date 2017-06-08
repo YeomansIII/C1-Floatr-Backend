@@ -15,4 +15,7 @@ router.route('/:id')
 router.route('/:id/initiate')
   .put(passport.authenticate('bearer', { session: false }), (...args) => controller.initiate(...args))
 
+router.route('/:id/confirm')
+  .put(passport.authenticate('bearer', { session: false }), (...args) => controller.confirm(...args))
+
 module.exports = router;

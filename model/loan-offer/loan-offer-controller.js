@@ -35,6 +35,16 @@ class LoanOfferController extends Controller {
       });
     });
   }
+
+  confirm(req, res, next) {
+    LoanOffer.findById(req.params.id, (err, loanOffer) => {
+      if (loanOffer.loaner !== req.user._id) {
+        res.json({
+          error: "you do not have permission to confirm this "
+        });
+      }
+    });
+  }
 }
 
 module.exports = new LoanOfferController(loanOfferModel);

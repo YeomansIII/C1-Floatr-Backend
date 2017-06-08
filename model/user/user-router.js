@@ -10,4 +10,7 @@ router.route('/:id')
   .put(passport.authenticate('bearer', { session: false }), (...args) => controller.update(...args))
   .get(passport.authenticate('bearer', { session: false }), (...args) => controller.findById(...args));
 
+router.route('/:id/offers')
+  .get(passport.authenticate('bearer', { session: false }), (...args) => controller.userOffers(...args));
+
 module.exports = router;
