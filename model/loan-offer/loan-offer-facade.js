@@ -12,7 +12,6 @@ class LoanOfferModel extends Model {
         LoanOffer.populate(loanOffer, {
           path: "loaner"
         }, function(err, loanOffer2) {
-          console.log(loanOffer2);
           resolve(loanOffer2);
         });
       });
@@ -22,12 +21,14 @@ class LoanOfferModel extends Model {
     return this.Schema
       .findById(id)
       .populate('loaner')
+      .populate('loanee')
       .exec();
   }
   find(query) {
     return this.Schema
       .find(query)
       .populate('loaner')
+      .populate('loanee')
       .exec();
   }
 }

@@ -12,4 +12,7 @@ router.route('/:id')
   .get(passport.authenticate('bearer', { session: false }), (...args) => controller.findById(...args))
   .delete(passport.authenticate('bearer', { session: false }), (...args) => controller.remove(...args));
 
+router.route('/:id/initiate')
+  .put(passport.authenticate('bearer', { session: false }), (...args) => controller.initiate(...args))
+
 module.exports = router;
