@@ -10,7 +10,7 @@ const auth  = require('./auth/auth-router');
 
 
 router.route('/').get((req, res) => {
-  res.json({ message: 'Welcome to nc-loan API!' });
+  res.json({ message: 'Welcome to Floatr API!' });
 });
 
 router.use('/user', user);

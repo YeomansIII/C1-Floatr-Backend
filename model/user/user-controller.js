@@ -3,6 +3,7 @@ const userModel = require('./user-facade');
 const request = require('superagent');
 const secrets = require('../../secrets');
 const LoanOffer = require('../loan-offer/loan-offer-schema');
+const Loan = require('../loan/loan-schema');
 // "secrets.var"
 const utils = require('../../utils/utils');
 
@@ -98,7 +99,24 @@ class UserController extends Controller {
       .populate('loaner')
       .populate('loanee')
       .exec((err, offers) => {
-        console.log(offers);
+        res.send(offers);
+      });
+  }
+
+  userLoans(req, res, next) {
+    Loan
+      .find({
+        $or: [{
+            loaner: req.user._id
+          },
+          {
+            loanee: req.user._id
+          }
+        ]
+      })
+      .populate('loaner')
+      .populate('loanee')
+      .exec((err, offers) => {
         res.send(offers);
       });
   }

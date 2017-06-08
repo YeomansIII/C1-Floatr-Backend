@@ -8,6 +8,12 @@ const loanOfferSchema = new Schema({
     ref: 'User',
     required: true
   },
+  loaner_bank_account: {
+    type: String
+  },
+  loanee_bank_account: {
+    type: String
+  },
   loanee: {
     type: Schema.ObjectId,
     ref: 'User'

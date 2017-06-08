@@ -15,7 +15,9 @@ const loanSchema = new Schema({
   period: { type: Number, min: 1, required: true },
   period_unit: { type: String, enum: ['day', 'week', 'month', 'year'], required: true},
   status: { type: String, enum: ['in_progress', 'complete', 'overdue'], required: true},
-  payments: { type: [Number], required: true }
+  payments: { type: [Number] },
+  payment_transfers: { type: [String] },
+  principle_transfer: { type:String }
 });
 
 
