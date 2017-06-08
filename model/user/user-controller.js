@@ -11,6 +11,26 @@ class UserController extends Controller {
     //  - DO NOT change: customer_id, first_name, last_name
     //  - DO change: email, loans, rating, avatar_url,
     //    offers, requests, status
+    rate(req, res, next) {
+        var body = req.body;
+        if (!utils.hasIt(body, 'rating')) {
+            res.json ({
+                error: "rating cannot be null/empty."
+            })
+        }
+        
+        userModel.findById(req.params.id, (err, user) => {
+            if (err) return handleError(err);
+            var avg = user.rating;
+            var num = user.num_ratings + 1;
+            var new_avg = avg * (num / (num + 1)) + body.rating / (num + 1);
+            user.rating = new_avg;
+            user.save((err, updated_user) => {
+               if (err) return handleError(err);
+               res.send(updated_user); 
+            });
+        });
+    }
     put(req, res, next) {
         var body = req.body;
         if (!utils.hasIt(body, 'customer_id')) {
