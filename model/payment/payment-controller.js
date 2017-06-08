@@ -6,7 +6,6 @@ class PaymentController extends Controller {
   pay(req, res, next) {
 
   }
-
 }
 
 module.exports = new PaymentController(paymentModel);

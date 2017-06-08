@@ -4,8 +4,9 @@ const LoanOffer = require('./loan-offer-schema');
 
 
 class LoanOfferModel extends Model {
-  create(input) {
+  create(input, activeUser) {
     return new Promise((resolve, reject) => {
+      input.loaner = activeUser._id;
       const loanOffer = new LoanOffer(input);
       loanOffer.save((err) => {
         LoanOffer.populate(loanOffer, {
